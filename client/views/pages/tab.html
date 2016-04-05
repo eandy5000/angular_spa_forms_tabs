@@ -1,0 +1,18 @@
+<div>
+    <h3>Tab Demo</h3>
+     <ul class = "nav nav-tabs">
+        <li ng-class = "{active: checkTab(1)}"><a href ng-click="setTab(1)">This</a></li>
+        <li ng-class = "{active: checkTab(2)}"><a href ng-click="setTab(2)">That</a></li>
+        <li ng-class = "{active: checkTab(3)}"><a href ng-click="setTab(3)" >The Other Thing</a></li>
+    </ul>
+  
+    <div ng-show ="checkTab(1)" class = "well">
+        <p>This content</p>
+    </div>
+    <div ng-show ="checkTab(2)" class = "well">
+        <p>That content</p>
+    </div>
+    <div ng-show ="checkTab(3)" class = "well">
+        <p>The Other content</p>
+    </div>
+</div>

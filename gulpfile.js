@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify');
     
     
-    gulp.task('default', ['sassCombo','index','ugly','scss','watch']);
+    gulp.task('default', ['sassCombo','index','ugly','scss','pagesHtml','watch']);
     
     
     gulp.task('index', function(){
@@ -15,7 +15,8 @@ var gulp = require('gulp'),
     gulp.task('watch', function(){
        gulp.watch('client/views/index.html',['index']); 
        gulp.watch('client/scripts/*.js',['ugly']);
-       gulp.watch('client/styles/*.scss',['sassCombo','scss']);
+       gulp.watch('client/styles/scss/*.scss',['sassCombo','scss']);
+       gulp.watch('client/views/pages/*html',['pagesHtml']);
     });
     
     gulp.task('sassCombo', function(){
@@ -33,4 +34,9 @@ var gulp = require('gulp'),
        return gulp.src('client/scripts/*.js')
                 .pipe(uglify())
                 .pipe(gulp.dest('public/scripts/')); 
+    });
+    
+    gulp.task('pagesHtml', function(){
+       return gulp.src('client/views/pages/*.html')
+                .pipe(gulp.dest('public/views/pages/')); 
     });

@@ -6,9 +6,37 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body ng-controller="MainCtrl">
-  <h1>Hi there!!!!</h1>
+
+<nav class = "navbar navbar-inverse">
+    <div class = "container">
+        <a href="#" class = "navbar-brand">Website Name!!!</a>
+        <ul class = "nav navbar-nav navbar-right">
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/tabs">Tabs</a></li>
+            <li><a href="#/form">Form</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class = "jumbotron">
+    <div class = "container">
+        <h1>Website Name!!!</h1>
+        <h3 class = "lead">...Best website around!!</h3>
+    </div>
+</header>
+
+<ng-view></ng-view>
+
+<footer>
+    <h4>Contact Us</h4>
+    <p>Email: <a href="#">fake@notreal.com</a></p>
+   
+</footer>
+    
+
    <script src="../vendors/angular.js"></script> 
    <script src="../vendors/angular-route.js"></script> 
    <script src="../scripts/app.js"></script> 
 </body>
 </html>
+

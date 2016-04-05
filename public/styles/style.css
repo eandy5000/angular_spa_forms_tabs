@@ -5625,3 +5625,10 @@ button.close {
   .hidden-print {
     display: none !important; } }
 /*# sourceMappingURL=bootstrap.min.css.map */
+footer {
+  background-color: #333;
+  color: white; }
+  footer a {
+    color: lightblue; }
+  footer a:hover {
+    color: red; }
