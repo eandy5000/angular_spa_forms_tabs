@@ -22,8 +22,17 @@ angular
         }
     }])
     
-    .controller('FormCtrl', [function(){
-       console.log('form Ctrl'); 
+    .controller('FormCtrl', ['$scope',function($scope){
+        $scope.forms = [];
+        $scope.form = {}
+        
+        $scope.formEnter = function() {
+            $scope.form = this.form;
+            $scope.forms.push($scope.form);
+            $scope.form = {};
+            $scope.demoForm.$setPristine();
+            return;
+        }
     }])
     
     .config(['$routeProvider', function($routeProvider){

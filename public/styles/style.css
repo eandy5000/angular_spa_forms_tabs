@@ -5632,3 +5632,7 @@ footer {
     color: lightblue; }
   footer a:hover {
     color: red; }
+
+.ng-invalid.ng-dirty {
+  border-color: red;
+  border-width: 5px; }

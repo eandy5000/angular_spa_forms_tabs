@@ -1,3 +1,32 @@
-<div>
-    <h3>Form's Demo</h3>
+<div class = "row">
+    <div class = "col-md-6 col-md-offset-1">
+    <h3>Form's Demo with Validation</h3>
+    <form name="demoForm" ng-submit="demoForm.$valid && formEnter()" novalidate>
+       
+        <label>Name:</label>
+        <p ng-show="demoForm.name.$invalid && demoForm.name.$dirty">A valid name has five characters</p>
+        <input type="text" ng-model="form.name" name = "name" class="form-control" ng-minlength="5" required>
+        <br>
+        <label>Email:</label>
+         <p ng-show="demoForm.email.$invalid && demoForm.email.$dirty">Enter a valid email address</p>
+        <input class="form-control" type="email" ng-model="form.email" name = "email"  required>
+        <br>
+        <label>BirthDay:</label>
+        <input class="form-control" type="date" ng-model="form.birthday" name = "birthday"  required>
+        <br>
+        <input type="submit" class = "btn btn-default">
+    </form>
+    
+        <div>
+            <h4>This form is valid: {{demoForm.$valid}}</h4>
+        </div>
+    </div>
+    <div class = "col-md-4 col-md-offset-1">
+        <div ng-hide="forms.length < 1">
+            <h3>Validated Data</h3>
+            <div ng-repeat="item in forms"> 
+                <p>Name: {{item.name}}</p>
+            </div>
+        </div>
+    </div>
 </div>
